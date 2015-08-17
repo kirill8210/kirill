@@ -4,7 +4,16 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
+group :development, :test do
 gem 'sqlite3'
+gem 'spring'
+end
+
+group :production do
+gem 'pg'
+gem 'rails_12factor'
+end
+
 # gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -45,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'better_errors', '~> 2.1.1'
 gem 'bootstrap-sass'
+
+ruby '2.0.0'
