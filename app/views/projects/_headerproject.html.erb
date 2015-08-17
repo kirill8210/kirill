@@ -1,0 +1,26 @@
+ 
+    <div style="outline:1px solid red;width:400px; margin:auto;" >   
+      <strong><%= project.name %></strong>
+      <%= link_to 'Изменить', edit_project_path(project), class: 'btn btn-info' %>
+      <%= link_to 'destroy',  project, remote: true, method: :delete , class: 'btn btn-danger' %>
+      
+      <br>
+
+          <%= form_for([project, Task.new], :remote => true) do |f| %>  
+        <div id="c">
+        <br>
+          <%= f.text_field :name %><%= f.submit "Create task", class: 'btn btn-success' %>
+        </div>
+        <div class="actions">
+          
+      <% end %>
+      <div class="sortable">
+      <% project.tasks.each do |task| %>
+      <%= render 'tasks/task', :task => task %>
+      <% end %>
+      </div>
+    </div>
+    </div>
+    
+
+    

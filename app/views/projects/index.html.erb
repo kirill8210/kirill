@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<div id="conteiner">
+ <% @projects.each do |project| %>  
+   <%= render 'headerproject', :project => project %>
+<% end %>
+</div>
+<%= render 'form' %>
+
+
