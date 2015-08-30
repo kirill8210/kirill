@@ -2,7 +2,7 @@
 
 <% if task.completed? %>
 <i class="fa fa-check-square-o" class="btn btn-success"></i>
-<b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" %></b>
+<b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}", style:"width:250px;" %></b>
 <%= link_to "#", class: 'btn btn-warning', id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
 <% end %>
@@ -17,7 +17,7 @@
 <%= link_to complete_project_task_path(task.project, task), class: "btn btn-success", method: :patch do %>
     <i class="fa fa-square-o"></i>
 <% end %>
-<%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" %>
+<%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}", style:"width:250px;"  %>
 <%= link_to "#", class: 'btn btn-warning', id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
 <% end %>
