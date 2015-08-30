@@ -15,7 +15,7 @@
     <br>
     <%= f.text_field :name %><%= f.submit "Create task", class: 'btn btn-success' %>
     </div>
-    <div class="actions" style="background-color:#fff;">
+    <div class="actions" >
     <% end %>
     <ul class="sortable" id="task<%=project.id%>" >
     <% project.tasks.each do |task| %>
