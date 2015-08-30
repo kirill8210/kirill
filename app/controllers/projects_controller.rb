@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.create(project_params)
+    @project = current_user.projects.create(project_params)
   end
 
   # PATCH/PUT /projects/1
