@@ -1,11 +1,8 @@
 <li id="re<%=task.id%>" data-id="<%=task.id%>" style="background-color:#fff;list-style:none;padding:35px;"> 
 
 <% if task.completed? %>
-<i class="fa fa-check-square-o;btn btn-success" style="float:left;"></i>
+<i class="fa fa-check-square-o" class="btn btn-success" style="float:left;"></i>
 <b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;padding:10px;" %></b>
-<%= link_to "#", class: 'btn btn-warning', style:"float:right;margin:10px;", id: "edit-task-name-#{task.id}" do %>
-    <i class="fa fa-pencil"></i>
-<% end %>
 <%= link_to task, class: "btn btn-danger", style:"float:right;margin:10px;", :remote => true, method: :delete do %>
     <i class="fa fa-trash-o"></i>
 <% end %>
@@ -15,13 +12,13 @@
     <i class="fa fa-square-o"></i>
 <% end %>
 <%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"padding:10px;" %>
-<%= link_to "#", class: 'btn btn-warning', style:"float:right;margin:10px;", id: "edit-task-name-#{task.id}" do %>
-    <i class="fa fa-pencil"></i>
-<% end %>
+
 <%= link_to task, class: "btn btn-danger", style:"float:right;margin:10px;", :remote => true, method: :delete do %>
     <i class="fa fa-trash-o"></i>
 <% end %>
-
+<%= link_to "#", class: 'btn btn-warning', style:"float:right;margin:10px;", id: "edit-task-name-#{task.id}" do %>
+    <i class="fa fa-pencil"></i>
+<% end %>
 <br>
 <% end %>
 </li>
