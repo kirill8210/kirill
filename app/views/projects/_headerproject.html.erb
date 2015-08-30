@@ -1,6 +1,6 @@
  
-    <div id="re<%=project.id%>" style="outline:1px solid red;width:400px; margin:auto;" id="aaa"> 
-    <%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
+    <div id="re<%=project.id%>" style="outline:2px solid #000; width:500px; margin:auto;" id="aaa"> 
+    <div style="color:#525;"><%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
 
     <%= link_to "#", class: 'btn btn-primary', id: "edit-project-name-#{project.id}" do %>
             <i class="fa fa-pencil"></i>
@@ -9,6 +9,7 @@
             <i class="fa fa-trash-o"></i>
             <% end %>
     <br>
+    </div>
     <%= form_for([project, Task.new], :remote => true) do |f| %>  
     <div >
     <br>
