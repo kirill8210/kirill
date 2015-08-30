@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @project = Project.new
 
-    end   
+  end   
 
   # GET /projects/1
   # GET /projects/1.json
@@ -28,9 +28,9 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
- def edit
+  def edit
 
-end
+  end
   def update
     respond_to do |format|
       if @project.update(project_params)

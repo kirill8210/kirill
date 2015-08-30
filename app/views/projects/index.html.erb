@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
+
 <div id="conteiner">
-<% if user_signed_in? %>
- <% current_user.projects.each do |project| %> 
- <div id="re<%=project.id %>" style="margin-bottom:30px"> 
-   <%= render 'headerproject', :project => project %>
-   </div>
-<% end %>
+
+	<% if user_signed_in? %>
+
+		<% current_user.projects.each do |project| %> 
+
+		<div id="re<%=project.id %>" style="margin-bottom:30px">
+
+			<%= render 'headerproject', :project => project %>
+
+		</div>
+
+	<% end %>
 
 </div>
-	<%= render 'form' %>
+
+<%= render 'form' %>
+
 <% end %>
+
 <div>
-<a href="https://github.com/kirill8210/kirill">
-GitHub
-</a>
+
+<a href="https://github.com/kirill8210/kirill">GitHub</a>
+
 </div>
 
