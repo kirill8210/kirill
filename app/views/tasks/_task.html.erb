@@ -3,7 +3,7 @@
 <% if task.completed? %>
 <i class="fa fa-check-square-o;btn btn-success" style="float:left;"></i>
 <b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;padding:10px;" %></b>
-<%= link_to "#", class: 'btn btn-warning', style:"float:right;padding:10px;", id: "edit-task-name-#{task.id}" do %>
+<%= link_to "#", class: 'btn btn-warning', style:"float:right;margin:10px;", id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
 <% end %>
 <%= link_to task, class: "btn btn-danger", style:"float:right;", :remote => true, method: :delete do %>
