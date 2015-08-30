@@ -16,7 +16,7 @@
     </div>
     <div class="actions">
     <% end %>
-    <ul class="sortable" id="task<%=project.id%>">
+    <ul class="sortable" id="task<%=project.id%>" style="list-style:none">
     <% project.tasks.each do |task| %>
     <%= render 'tasks/task', :task => task %>
     <% end %>
