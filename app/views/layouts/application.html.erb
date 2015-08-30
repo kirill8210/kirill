@@ -9,7 +9,7 @@
 </head>
 <body>
 <% if current_user %>
-	<span>Здравствуйте, <%= current_user.email %></span>
+	<span>Welcome, <%= current_user.email %></span>
 	<%= link_to destroy_user_session_path, :method => :delete, class: "btn btn-danger" do %>
             <i class="fa fa-sign-out"></i>
             <% end %>
@@ -23,7 +23,7 @@
             <% end %>
 
 <% end %>
-<h1>Projects</h1>
+<h1>PRPJECTS</h1>
 <%= yield %>
 
 </body>
