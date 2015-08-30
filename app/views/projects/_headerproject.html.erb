@@ -1,6 +1,6 @@
  
     <div id="re<%=project.id%>" style="outline:2px solid #000; width:500px; margin:auto; background-color:#fff" > 
-    <div style="background-color:#525; color:red;height:40px;"><%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
+    <div style="background-color:#525; color:red;height:38px;"><%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
     <%= link_to  project, style:"float:right;", class: "btn btn-danger", remote: true, method: :delete do %>
             <i class="fa fa-trash-o"></i>
             <% end %>
