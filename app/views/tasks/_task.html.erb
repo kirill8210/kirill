@@ -1,4 +1,4 @@
-<li id="re<%=task.id%>" data-id="<%=task.id%>">
+<li id="re<%=task.id%>" data-id="<%=task.id%>" style="background-color:#fff;"> 
 
 <% if task.completed? %>
 <strike><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" %></strike>
