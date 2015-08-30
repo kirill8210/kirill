@@ -1,7 +1,7 @@
 <li id="re<%=task.id%>" data-id="<%=task.id%>" style="background-color:#fff;list-style:none;padding:35px;"> 
 
 <% if task.completed? %>
-<i class="fa fa-check-square-o" class="btn btn-success" style="float:left;"></i>
+<i class="fa fa-check-square-o" class="btn btn-success" style="float:left;margin:20px;"></i>
 <b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;padding:10px;" %></b>
 <%= link_to task, class: "btn btn-danger", style:"float:right;margin:10px;", :remote => true, method: :delete do %>
     <i class="fa fa-trash-o"></i>
