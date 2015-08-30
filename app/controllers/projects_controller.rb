@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
   # GET /projects
   # GET /projects.json
   def index
@@ -19,41 +20,33 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-  # GET /projects/1/edit
-  def edit
-  end
-
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.create(project_params)
-
-       respond_to do |format| 
-     format.js 
-  end
   end
 
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
+ def edit
+
+end
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
+        format.html { redirect_to @project, notice: 'project was successfully updated.' }
+        format.json { respond_with_bip(@project) }
       else
         format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@project) }
       end
     end
   end
-
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    respond_to do |format| 
-     format.js 
-    end
+    respond_with @project
   end
 
   private

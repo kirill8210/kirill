@@ -1,1 +1,3 @@
-$('#conteiner').html("<%= escape_javascript(render('headerproject', :project => @project)) %>").fadeOut(500); 
+$("<%= j (render('headerproject', :project => @project)) %>"); 
+$("<%= "#re#{@project.id}" %>").hide();
+ 

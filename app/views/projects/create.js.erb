@@ -1,3 +1,8 @@
 $("<%= escape_javascript(render('headerproject', :project => @project)) %>").fadeIn(500).appendTo('#conteiner');
 $('form input[type=text]').val(' ');
 $('form textarea').val(' ');
+
+
+$(document).ready(function() {
+  $(".best_in_place").best_in_place();
+});

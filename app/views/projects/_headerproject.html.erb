@@ -1,24 +1,26 @@
  
-    <div style="outline:1px solid red;width:400px; margin:auto;" >   
-      <strong><%= project.name %></strong>
-      <%= link_to 'Изменить', edit_project_path(project), class: 'btn btn-info' %>
-      <%= link_to 'destroy',  project, remote: true, method: :delete , class: 'btn btn-danger' %>
-      
-      <br>
+    <div id="re<%=project.id%>" style="outline:1px solid red;width:400px; margin:auto;" > 
+    <%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
 
-          <%= form_for([project, Task.new], :remote => true) do |f| %>  
-        <div id="c">
-        <br>
-          <%= f.text_field :name %><%= f.submit "Create task", class: 'btn btn-success' %>
-        </div>
-        <div class="actions">
-          
-      <% end %>
-      <div class="sortable">
-      <% project.tasks.each do |task| %>
-      <%= render 'tasks/task', :task => task %>
-      <% end %>
-      </div>
+    <%= link_to "#", class: 'btn btn-primary', id: "edit-project-name-#{project.id}" do %>
+            <i class="fa fa-pencil"></i>
+            <% end %>
+    <%= link_to  project, class: "btn btn-danger", remote: true, method: :delete do %>
+            <i class="fa fa-trash-o"></i>
+            <% end %>
+    <br>
+    <%= form_for([project, Task.new], :remote => true) do |f| %>  
+    <div >
+    <br>
+    <%= f.text_field :name %><%= f.submit "Create task", class: 'btn btn-success' %>
+    </div>
+    <div class="actions">
+    <% end %>
+    <ul class="sortable" id="task<%=project.id%>">
+    <% project.tasks.each do |task| %>
+    <%= render 'tasks/task', :task => task %>
+    <% end %>
+    </ul>
     </div>
     </div>
     

@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
  
+  devise_for :users
   resources :projects do
     resources :tasks do
+      member do
+        patch :complete
+      end
       put :sort, on: :collection
     end
   end
+  
   resources :tasks
   root 'projects#index'
 
