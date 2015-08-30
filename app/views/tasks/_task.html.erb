@@ -1,7 +1,7 @@
-<li id="re<%=task.id%>" data-id="<%=task.id%>" style="background-color:#fff;list-style:none;"> 
+<li id="re<%=task.id%>" data-id="<%=task.id%>" style="background-color:#fff;list-style:none;padding:5px;"> 
 
 <% if task.completed? %>
-<i class="fa fa-check-square-o" class="btn btn-success" style="float:left;"></i>
+<i class="fa fa-check-square-o;btn btn-success" style="float:left;"></i>
 <b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;" %></b>
 <%= link_to "#", class: 'btn btn-warning', style:"float:right;", id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
