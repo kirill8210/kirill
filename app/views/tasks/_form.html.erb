@@ -1,6 +1,6 @@
-<div style="background-color:#fff;">
-<%= form_for(@task, :remote => true) do |f| %> 
 
+<%= form_for(@task, :remote => true) do |f| %> 
+<div style="background-color:#fff;">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -8,5 +8,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
 </div>
+<% end %>
