@@ -2,22 +2,19 @@
 
 <% if task.completed? %>
 <i class="fa fa-check-square-o;btn btn-success" style="float:left;"></i>
-<b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;" %></b>
+<b><%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;padding:10px;" %></b>
 <%= link_to "#", class: 'btn btn-warning', style:"float:right;", id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
 <% end %>
 <%= link_to task, class: "btn btn-danger", style:"float:right;", :remote => true, method: :delete do %>
     <i class="fa fa-trash-o"></i>
 <% end %>
-
-
-
 <br>
 <% else %>
 <%= link_to complete_project_task_path(task.project, task), style:"float:left;", class: "btn btn-success", method: :patch do %>
     <i class="fa fa-square-o"></i>
 <% end %>
-<%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"width:250px;" %>
+<%= best_in_place task, :name, as: :input, activator: "#edit-task-name-#{task.id}" , style:"padding:10px;" %>
 <%= link_to "#", class: 'btn btn-warning', style:"float:right;", id: "edit-task-name-#{task.id}" do %>
     <i class="fa fa-pencil"></i>
 <% end %>
