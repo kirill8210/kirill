@@ -17,11 +17,13 @@
     </div>
     <div class="actions" >
     <% end %>
+    <div style="background-color:#fff;">
     <ul class="sortable" id="task<%=project.id%>" >
     <% project.tasks.each do |task| %>
     <%= render 'tasks/task', :task => task %>
     <% end %>
     </ul>
+    </div>
     </div>
     </div>
     
