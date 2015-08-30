@@ -1,5 +1,5 @@
  
-    <div id="re<%=project.id%>" style="outline:1px solid red;width:400px; margin:auto;" > 
+    <div id="re<%=project.id%>" style="outline:1px solid red;width:400px; margin:auto;" id="aaa"> 
     <%= best_in_place project, :name, as: :input, activator: "#edit-project-name-#{project.id}" %>
 
     <%= link_to "#", class: 'btn btn-primary', id: "edit-project-name-#{project.id}" do %>
