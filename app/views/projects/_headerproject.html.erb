@@ -11,7 +11,7 @@
     <br>
     </div>
     <%= form_for([project, Task.new], :remote => true) do |f| %>  
-    <div style="background-color:#fff;">
+    <div >
     <br>
     <%= f.text_field :name %><%= f.submit "Create task", class: 'btn btn-success' %>
     </div>
