@@ -2,7 +2,7 @@
 <div id="conteiner">
 <% if user_signed_in? %>
  <% current_user.projects.each do |project| %> 
- <div id="re<%=project.id %>" style="margin-bottom:30px"> 
+ <div id="re<%=project.id %>" > 
    <%= render 'headerproject', :project => project %>
    </div>
 <% end %>
